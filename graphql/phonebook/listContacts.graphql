@@ -1,0 +1,22 @@
+
+type Query @auth(guards: ["sanctum"]){
+    phone_books(
+      id: ID 
+      name: String 
+      contact_no: String 
+    ): Phonebook @find
+
+    phone_books(
+      name: String @where(operator: "like")
+      contact_no: String @where(operator: "like")
+    ): [Phonebook!]! @all 
+}
+
+type Phonebook {
+    id: ID!
+    name: String!
+    contact_no: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+

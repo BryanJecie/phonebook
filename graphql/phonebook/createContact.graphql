@@ -1,0 +1,5 @@
+type Mutation  @auth(guards: ["sanctum"]) {
+  onCreate(name: String!, contact_no: String!): Phonebook! @create
+}
+
+

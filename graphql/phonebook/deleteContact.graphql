@@ -1,0 +1,11 @@
+type Mutation  @auth(guards: ["sanctum"]) {
+  onDelete(id: ID! @whereKey): Phonebook @delete
+}
+
+type Phonebook {
+    id: ID!
+    name: String!
+    contact_no: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+}

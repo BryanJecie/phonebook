@@ -1,0 +1,12 @@
+type Query  @auth(guards: ["sanctum"]){
+  onView(id: String! @eq): Phonebook @find
+}
+
+type Phonebook {
+    id: ID!
+    name: String!
+    contact_no: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
